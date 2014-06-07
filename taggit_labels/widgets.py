@@ -32,12 +32,13 @@ class LabelWidget(TagWidget):
             else:
                 selected_tags.append((tag.name, ''))
 
-        tag_li = "".join(["<li data-tag-name='{0}' class={1}>{0}</li>".format(tag[0], tag[1]) for tag in selected_tags])
+        tag_li = "".join(["<li data-tag-name='{0}' class={1}>{0}</li>".format(
+            tag[0], tag[1]) for tag in selected_tags])
         tag_ul = "<ul{0}>{1}</ul>".format(list_attrs, tag_li)
         return mark_safe(u"{0}{1}".format(tag_ul, return_val))
 
     class Media:
         css = {
-            'all': ('taggit_widgets.css',)
+            'all': ('css/taggit_labels.css',)
         }
-        js = ('taggit_widgets.js',)
+        js = ('js/taggit_labels.js',)
