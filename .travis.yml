@@ -11,7 +11,7 @@ python:
 install: pip install -r requirements-test.txt
 
 # command to run tests using coverage, e.g. python setup.py test
-script: coverage run --source taggit_widgets runtests.py
+script: coverage run --source taggit_labels runtests.py
 
 # report coverage to coveralls.io
 after_success: coveralls

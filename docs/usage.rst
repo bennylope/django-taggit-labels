@@ -2,6 +2,6 @@
 Usage
 ========
 
-To use django-taggit-widgets in a project::
+To use django-taggit-labels in a project::
 
-    import django-taggit-widgets
+    import django-taggit-labels

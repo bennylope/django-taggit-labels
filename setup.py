@@ -4,14 +4,14 @@
 import os
 import sys
 
-import taggit_widgets
+import taggit_labels
 
 try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
 
-version = taggit_widgets.__version__
+version = taggit_labels.__version__
 
 if sys.argv[-1] == 'publish':
     os.system('python setup.py sdist upload')
@@ -24,15 +24,15 @@ readme = open('README.rst').read()
 history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 setup(
-    name='django-taggit-widgets',
+    name='django-taggit-labels',
     version=version,
-    description="""Alternate widgets for django-taggit""",
+    description="""Alternate labels for django-taggit""",
     long_description=readme + '\n\n' + history,
     author='Ben Lopatin',
     author_email='ben@wellfire.co',
-    url='https://github.com/bennylope/django-taggit-widgets',
+    url='https://github.com/bennylope/django-taggit-labels',
     packages=[
-        'taggit_widgets',
+        'taggit_labels',
     ],
     include_package_data=True,
     install_requires=[
@@ -41,7 +41,7 @@ setup(
     ],
     license="BSD",
     zip_safe=False,
-    keywords='django-taggit-widgets',
+    keywords='django-taggit-labels',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Framework :: Django',
