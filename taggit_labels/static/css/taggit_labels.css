@@ -1,0 +1,2 @@
+ul.tags li { display: inline; margin-left: 5px; margin-right: 5px; padding: 5px; background-color: #FFCF99; color: #777;}
+ul.tags li.selected { background-color: #FF8600; color: white; }
