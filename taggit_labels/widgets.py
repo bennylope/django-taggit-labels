@@ -13,8 +13,11 @@ class LabelWidget(TagWidget):
     def __init__(self, *args, **kwargs):
         model = kwargs.pop('model', None)
         if model is None:
-            raise TypeError("No 'model' keyword argument provided")
-        super(TagWidget, self).__init__(*args, **kwargs)
+            from taggit.models import Tag
+            self.model = Tag
+        else:
+            self.model = model
+        super(LabelWidget, self).__init__(*args, **kwargs)
 
     def render(self, name, value, attrs=None):
         tags = [o.tag for o in value.select_related("tag")]

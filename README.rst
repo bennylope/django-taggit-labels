@@ -8,9 +8,6 @@ django-taggit-labels
 .. image:: https://travis-ci.org/bennylope/django-taggit-labels.png?branch=master
     :target: https://travis-ci.org/bennylope/django-taggit-labels
 
-.. image:: https://coveralls.io/repos/bennylope/django-taggit-labels/badge.png?branch=master
-    :target: https://coveralls.io/r/bennylope/django-taggit-labels?branch=master
-
 Label widget(s) for `django-taggit <https://github.com/alex/django-taggit>`_.
 
 Now instead of this:
