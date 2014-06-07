@@ -21,6 +21,13 @@ You can use this:
 
 .. image:: https://raw.githubusercontent.com/bennylope/django-taggit-labels/master/docs/taggit-labels.png
 
+Overview
+--------
+
+This is a widget for use in the Django admin interface, and it depends on
+Django's namespaced jQuery. It allows you to add and remove tags by selecting
+or deselecting visual labels.
+
 The label widget does not expose the input field so that you can add new tags. The
 base label widget instead shows all available tags and lets you pick between
 them in Django's admin interface. It presumes that you are using a managed (or
