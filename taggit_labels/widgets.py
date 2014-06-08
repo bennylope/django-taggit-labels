@@ -28,7 +28,7 @@ class LabelWidget(forms.TextInput):
 
         Returns a list of tuples of the form (<tag name>, <CSS class name>)
         """
-        return [(edit_string_for_tags([tag]), 'selected' if tag in tags else '')
+        return [(tag.name, 'selected' if tag in tags else '')
                 for tag in self.model.objects.all()]
 
     def format_value(self, value):
