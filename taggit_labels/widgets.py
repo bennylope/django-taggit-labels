@@ -1,11 +1,15 @@
+from django import forms
 from django.forms.util import flatatt
 from django.utils.safestring import mark_safe
+from django.utils import six
 
-from taggit.forms import TagWidget
+from taggit.utils import edit_string_for_tags
 
 
-class LabelWidget(TagWidget):
+class LabelWidget(forms.TextInput):
     """
+    Widget class for rendering an item's tags - and all existing tags - as
+    selectable labels.
     """
     input_type = 'hidden'
     model = None
@@ -14,31 +18,39 @@ class LabelWidget(TagWidget):
         model = kwargs.pop('model', None)
         if model is None:
             from taggit.models import Tag
-            self.model = Tag
-        else:
-            self.model = model
+            model = Tag
+        self.model = model
         super(LabelWidget, self).__init__(*args, **kwargs)
 
-    def render(self, name, value, attrs=None):
-        tags = [o.tag for o in value.select_related("tag")]
-        return_val = super(TagWidget, self).render(name, value, attrs)
+    def tag_list(self, tags):
+        """
+        Generates a list of tags identifying those previously selected.
 
-        if attrs.get('class', None) is None:
+        Returns a list of tuples of the form (<tag name>, <CSS class name>)
+        """
+        return [(edit_string_for_tags([tag]), 'selected' if tag in tags else '')
+                for tag in self.model.objects.all()]
+
+    def format_value(self, value):
+        if value is not None and not isinstance(value, six.string_types):
+            value = edit_string_for_tags([o.tag for o in value.select_related("tag")])
+        return value
+
+    def render(self, name, value, attrs={}):
+        current_tags = [o.tag for o in value.select_related("tag")]
+        formatted_value = self.format_value(value)
+        input_field = super(LabelWidget, self).render(name, formatted_value, attrs)
+
+        if attrs.get('class') is None:
             attrs.update({'class': 'tags'})
         list_attrs = flatatt(attrs)
-        all_tags = self.model.objects.all()
 
-        selected_tags = []
-        for tag in all_tags:
-            if tag in tags:
-                selected_tags.append((tag.name, 'selected'))
-            else:
-                selected_tags.append((tag.name, ''))
+        selected_tags = self.tag_list(current_tags)
 
         tag_li = "".join(["<li data-tag-name='{0}' class={1}>{0}</li>".format(
             tag[0], tag[1]) for tag in selected_tags])
         tag_ul = "<ul{0}>{1}</ul>".format(list_attrs, tag_li)
-        return mark_safe(u"{0}{1}".format(tag_ul, return_val))
+        return mark_safe(u"{0}{1}".format(tag_ul, input_field))
 
     class Media:
         css = {

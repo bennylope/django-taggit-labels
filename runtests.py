@@ -17,6 +17,7 @@ try:
             "django.contrib.sites",
             "taggit",
             "taggit_labels",
+            "test_app",
         ],
         SITE_ID=1,
         NOSE_ARGS=['-s'],
