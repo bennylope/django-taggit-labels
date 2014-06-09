@@ -6,6 +6,7 @@ ul.tags li {
   background-color: #fff;
   border: 1px solid #ff8600;
   color: #777;
+  cursor: pointer;
 }
 ul.tags li.selected {
   background-color: #ff8600;
