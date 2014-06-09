@@ -3,6 +3,16 @@
 History
 -------
 
+0.1.2 (2014-06-08)
+++++++++++++++++++
+
+* Breaks up some widget functionality, adds minor tests
+
+0.1.1 (2014-06-07)
+++++++++++++++++++
+
+* Fixes a bug in custom model initialization
+
 0.1.0 (2014-06-07)
 ++++++++++++++++++
 
