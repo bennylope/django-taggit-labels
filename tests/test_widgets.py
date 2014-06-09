@@ -23,7 +23,7 @@ class LabelTest(TestCase):
         widget = LabelWidget()
         return_list = widget.tag_list(self.article.tags.all())
         self.assertEqual(["Python"], [tag[0] for tag in return_list if tag[1] == 'selected'])
-        self.assertEqual(["Django", "\"Advanced Computering\""], [tag[0] for tag in return_list if tag[1] == ''])
+        self.assertEqual(["Django", "Advanced Computering"], [tag[0] for tag in return_list if tag[1] == ''])
 
     def test_custom_selected_tags(self):
         widget = LabelWidget(model=MyCustomTag)
