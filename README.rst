@@ -50,6 +50,8 @@ Use the label widget::
 
     class ContentForm(forms.ModelForm):
         tags = TagField(required=False, widget=LabelWidget)
+        
+Just use this form class for your `ModelAdmin <https://docs.djangoproject.com/en/dev/ref/contrib/admin/#django.contrib.admin.ModelAdmin.form>`_ class now.
 
 You can use the widget with `your own tag model
 <http://django-taggit.readthedocs.org/en/latest/custom_tagging.html>`_, too::
