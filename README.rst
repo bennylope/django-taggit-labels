@@ -49,7 +49,7 @@ Use the label widget::
     from taggit_labels.widgets import LabelWidget
 
     class ContentForm(forms.ModelForm):
-        tags = TagField(required=False, LabelWidget)
+        tags = TagField(required=False, widget=LabelWidget)
 
 You can use the widget with `your own tag model
 <http://django-taggit.readthedocs.org/en/latest/custom_tagging.html>`_, too::
