@@ -3,6 +3,16 @@
 History
 -------
 
+0.1.6 (2014-08-04)
+++++++++++++++++++
+
+* Updates styling of tag labels for line breaking and hover state
+
+0.1.5 (2014-06-20)
+++++++++++++++++++
+
+* Fixes rendering for submitted, invalid forms
+
 0.1.4 (2014-06-09)
 ++++++++++++++++++
 
