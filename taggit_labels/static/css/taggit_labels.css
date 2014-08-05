@@ -11,3 +11,6 @@ ul.tags li.selected {
   background-color: #ff8600;
   color: #fff;
 }
+ul.tags li:hover {
+  background-color: #FF9966;
+}
