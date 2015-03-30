@@ -7,31 +7,35 @@
   $(document).ready(function() {
     // TODO this line assumes one tag field and that it is named as 'tags' -
     // this is too fragile
-    var inputs = $("input#id_tags")[0];
-    var tagItems = $("ul.tags li");
-    var tagList = inputs.value.split(", ");
-    tagItems.click(function() {
+    var parent = $(".taggit-labels").closest('div');
+
+    $(".taggit-labels").closest('div').each(function(i) {
+      var inputs = $(this).find(".taggit-labels + input")[0];
+      var tagItems = $(this).find("ul.tags li");
       var tagList = inputs.value.split(", ");
-      var tagName = $(this).attr("data-tag-name");
+      tagItems.click(function() {
+        var tagList = inputs.value.split(", ");
+        var tagName = $(this).attr("data-tag-name");
 
-      // Tag names need to be quotes if they contain commas or quotation marks
-      if(tagName.indexOf(",") != -1 || tagName.indexOf(" ") != -1) {
-        tagName = "\"" + tagName + "\"";
-      }
+        // Tag names need to be quotes if they contain commas or quotation marks
+        if(tagName.indexOf(",") != -1 || tagName.indexOf(" ") != -1) {
+          tagName = "\"" + tagName + "\"";
+        }
 
-      var index = $.inArray(tagName, tagList);
-      // Add the selected tag to the list of tags if it wasn't there previously
-      // and remove it if it was present.
-      if(index == -1) {
-        $(this).toggleClass("selected");
-        tagList.push(tagName);
-      } else {
-        $(this).toggleClass("selected");
-        tagList.splice(index, 1);
-      }
+        var index = $.inArray(tagName, tagList);
+        // Add the selected tag to the list of tags if it wasn't there previously
+        // and remove it if it was present.
+        if(index == -1) {
+          $(this).toggleClass("selected");
+          tagList.push(tagName);
+        } else {
+           $(this).toggleClass("selected");
+           tagList.splice(index, 1);
+        }
 
-      // Refresh the tag list
-      $(inputs).attr("value", tagList.join(", "));
+        // Refresh the tag list
+        $(inputs).attr("value", tagList.join(", "));
+      });
     });
   });
 })(django.jQuery);

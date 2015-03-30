@@ -62,7 +62,7 @@ class LabelWidget(forms.TextInput):
         input_field = super(LabelWidget, self).render(name, formatted_value, attrs)
 
         if attrs.get('class') is None:
-            attrs.update({'class': 'tags'})
+            attrs.update({'class': 'tags taggit-labels'})
         list_attrs = flatatt(attrs)
 
         tag_li = "".join(["<li data-tag-name='{0}' class={1}>{0}</li>".format(
