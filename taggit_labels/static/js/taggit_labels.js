@@ -5,8 +5,6 @@
 
 (function($) {
   $(document).ready(function() {
-    // TODO this line assumes one tag field and that it is named as 'tags' -
-    // this is too fragile
     $(".taggit-labels").closest("div").each(function(i) {
       var inputs = $(this).find(".taggit-labels + input")[0];
       var tagItems = $(this).find("ul.tags li");
