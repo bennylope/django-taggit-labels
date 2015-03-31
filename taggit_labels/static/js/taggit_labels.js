@@ -9,7 +9,7 @@
     // this is too fragile
     var parent = $(".taggit-labels").closest('div');
 
-    $(".taggit-labels").closest('div').each(function(i) {
+    $(".taggit-labels").closest("div").each(function(i) {
       var inputs = $(this).find(".taggit-labels + input")[0];
       var tagItems = $(this).find("ul.tags li");
       var tagList = inputs.value.split(", ");
