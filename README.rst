@@ -2,10 +2,10 @@
 django-taggit-labels
 ====================
 
-.. image:: https://badge.fury.io/py/django-taggit-labels.png
+.. image:: https://badge.fury.io/py/django-taggit-labels.svg
     :target: https://badge.fury.io/py/django-taggit-labels
 
-.. image:: https://travis-ci.org/bennylope/django-taggit-labels.png?branch=master
+.. image:: https://travis-ci.org/bennylope/django-taggit-labels.svg?branch=master
     :target: https://travis-ci.org/bennylope/django-taggit-labels
 
 Label widget(s) for `django-taggit <https://github.com/alex/django-taggit>`_.
@@ -50,8 +50,10 @@ Use the label widget::
 
     class ContentForm(forms.ModelForm):
         tags = TagField(required=False, widget=LabelWidget)
-        
-Just use this form class for your `ModelAdmin <https://docs.djangoproject.com/en/dev/ref/contrib/admin/#django.contrib.admin.ModelAdmin.form>`_ class now.
+
+Just use this form class for your `ModelAdmin
+<https://docs.djangoproject.com/en/dev/ref/contrib/admin/#django.contrib.admin.ModelAdmin.form>`_
+class now.
 
 You can use the widget with `your own tag model
 <http://django-taggit.readthedocs.org/en/latest/custom_tagging.html>`_, too::

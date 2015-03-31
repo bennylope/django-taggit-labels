@@ -10,4 +10,4 @@ Development Lead
 Contributors
 ------------
 
-None yet. Why not be the first?
+* `Lee Solway <https://github.com/leesolway/>`_

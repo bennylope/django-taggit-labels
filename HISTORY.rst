@@ -3,6 +3,11 @@
 History
 -------
 
+0.2.0 (2015-03-31)
+++++++++++++++++++
+
+* Adds support for multiple tag fields (thanks to Lee Solway)
+
 0.1.6 (2014-08-04)
 ++++++++++++++++++
 
