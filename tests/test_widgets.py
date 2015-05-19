@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 from django.test import TestCase
 
 from taggit.models import Tag
@@ -14,6 +16,7 @@ class LabelTest(TestCase):
         Tag.objects.create(name="Advanced Computering", slug="advanced-computering")
         MyCustomTag.objects.create(name="Coffee", slug="coffee")
         MyCustomTag.objects.create(name="tea", slug="tea")
+        MyCustomTag.objects.create(name="À bientôt", slug="a-bientot")
         self.article = Content.objects.create(title="My test")
         self.article.tags.add("Python")
         self.post = MyContent.objects.create(title="My test")
