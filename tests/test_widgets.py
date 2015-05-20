@@ -30,7 +30,6 @@ class LabelTest(TestCase):
 
     def test_custom_selected_tags(self):
         widget = LabelWidget(model=MyCustomTag)
-        print self.post.tags.all
         return_list = widget.tag_list([t.name for t in self.post.tags.all()])
         self.assertEqual(["Coffee"], [tag[0] for tag in return_list if tag[1] == 'selected'])
         self.assertEqual(["tea"], [tag[0] for tag in return_list if tag[1] == ''])
