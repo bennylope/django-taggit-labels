@@ -21,6 +21,10 @@ class LabelWidget(forms.TextInput):
             model = Tag
         self.model = model
         super(LabelWidget, self).__init__(*args, **kwargs)
+        
+    @property
+    def is_hidden(self):
+        return False
 
     def tag_list(self, tags):
         """
