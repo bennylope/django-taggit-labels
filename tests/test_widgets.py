@@ -22,6 +22,12 @@ class LabelTest(TestCase):
         self.post = MyContent.objects.create(title="My test")
         self.post.tags.add("Coffee")
 
+    def test_initialization(self):
+        customized_widget = LabelWidget(model=MyCustomTag)
+        self.assertEqual(customized_widget.model, MyCustomTag)
+        default_widget = LabelWidget()
+        self.assertEqual(default_widget.model, Tag)
+
     def test_selected_tags(self):
         widget = LabelWidget()
         return_list = widget.tag_list([t.name for t in self.article.tags.all()])
