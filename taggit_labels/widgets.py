@@ -8,6 +8,7 @@ except ImportError:
 from django.utils.safestring import mark_safe
 from django.utils import six
 
+from taggit.models import Tag
 from taggit.utils import edit_string_for_tags
 
 
@@ -17,14 +18,10 @@ class LabelWidget(forms.TextInput):
     selectable labels.
     """
     input_type = 'hidden'
-    model = None
+    model = Tag
 
     def __init__(self, *args, **kwargs):
-        model = kwargs.pop('model', None)
-        if model is None:
-            from taggit.models import Tag
-            model = Tag
-        self.model = model
+        self.model = kwargs.pop('model', None) or self.model
         super(LabelWidget, self).__init__(*args, **kwargs)
 
     @property
