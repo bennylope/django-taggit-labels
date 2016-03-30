@@ -19,7 +19,7 @@ $taggit_labels_selected_tag_border_color_hover: $taggit_labels_selected_tag_bg_h
 
 // margin, padding, border
 $taggit_labels_tag_margin: 0 5px 10px 5px;
-$taggit_labels_tag_padding: 5px;
+$taggit_labels_tag_padding: 5px 10px;
 $taggit_labels_tag_border: 1px solid $taggit_labels_tag_color;
 $taggit_labels_tag_border_radius: 3px;
 
@@ -35,6 +35,9 @@ $taggit_labels_tag_border_radius: 3px;
             background-color: $taggit_labels_tag_bg;
             color: $taggit_labels_tag_color;
             cursor: pointer;
+            &:first-child {
+                margin-left: 0;
+            }
             &:hover {
                 background-color: $taggit_labels_tag_bg_hover;
                 color: $taggit_labels_tag_color_hover;

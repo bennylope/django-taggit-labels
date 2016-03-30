@@ -4,12 +4,15 @@
 .taggit-labels.taggit-list .taggit-tag {
   display: inline-block;
   margin: 0 5px 10px 5px;
-  padding: 5px;
+  padding: 5px 10px;
   border: 1px solid #999999;
   border-radius: 3px;
   background-color: transparent;
   color: #999999;
   cursor: pointer;
+}
+.taggit-labels.taggit-list .taggit-tag:first-child {
+  margin-left: 0;
 }
 .taggit-labels.taggit-list .taggit-tag:hover {
   background-color: transparent;
