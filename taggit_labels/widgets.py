@@ -37,7 +37,7 @@ class LabelWidget(forms.TextInput):
         Uses the string names rather than the tags themselves in order to work
         with tag lists built from forms not fully submitted.
         """
-        return [(tag.name, 'selected' if tag.name in tags else '')
+        return [(tag.name, 'selected taggit-tag' if tag.name in tags else 'taggit-tag')
                 for tag in self.model.objects.all()]
 
     def format_value(self, value):
@@ -68,7 +68,7 @@ class LabelWidget(forms.TextInput):
         input_field = super(LabelWidget, self).render(name, formatted_value, attrs)
 
         if attrs.get('class') is None:
-            attrs.update({'class': 'tags taggit-labels'})
+            attrs.update({'class': 'taggit-labels taggit-list'})
         list_attrs = flatatt(attrs)
 
         tag_li = "".join([u"<li data-tag-name='{0}' class={1}>{0}</li>".format(
@@ -78,6 +78,6 @@ class LabelWidget(forms.TextInput):
 
     class Media:
         css = {
-            'all': ('css/taggit_labels.css',)
+            'all': ('taggit_labels/css/taggit_labels.css',)
         }
-        js = ('js/taggit_labels.js',)
+        js = ('taggit_labels/js/taggit_labels.js',)

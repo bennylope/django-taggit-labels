@@ -1,0 +1,58 @@
+// background
+$taggit_labels_bg: transparent;
+// tag
+$taggit_labels_tag_bg: $taggit_labels_bg;
+$taggit_labels_tag_color: #999999;
+$taggit_labels_tag_border_color: $taggit_labels_tag_color;
+// tag hover
+$taggit_labels_tag_bg_hover: $taggit_labels_bg;
+$taggit_labels_tag_color_hover: #79AEC8;
+$taggit_labels_tag_border_color_hover: $taggit_labels_tag_color_hover;
+// selected tag
+$taggit_labels_selected_tag_bg: #417690;
+$taggit_labels_selected_tag_color: #FFFFFF;
+$taggit_labels_selected_tag_border_color: #417690;
+// selected tag hover
+$taggit_labels_selected_tag_bg_hover: lighten($taggit_labels_selected_tag_bg,1%);
+$taggit_labels_selected_tag_color_hover: $taggit_labels_selected_tag_color;
+$taggit_labels_selected_tag_border_color_hover: $taggit_labels_selected_tag_bg_hover;
+
+// margin, padding, border
+$taggit_labels_tag_margin: 0 5px 10px 5px;
+$taggit_labels_tag_padding: 5px 10px;
+$taggit_labels_tag_border: 1px solid $taggit_labels_tag_color;
+$taggit_labels_tag_border_radius: 3px;
+
+.taggit-labels {
+    &.taggit-list {
+        background-color: $taggit_labels_bg;
+        .taggit-tag {
+            display: inline-block;
+            margin: $taggit_labels_tag_margin;
+            padding: $taggit_labels_tag_padding;
+            border: $taggit_labels_tag_border;
+            border-radius: $taggit_labels_tag_border_radius;
+            background-color: $taggit_labels_tag_bg;
+            color: $taggit_labels_tag_color;
+            cursor: pointer;
+            &:first-child {
+                margin-left: 0;
+            }
+            &:hover {
+                background-color: $taggit_labels_tag_bg_hover;
+                color: $taggit_labels_tag_color_hover;
+                border-color: $taggit_labels_tag_border_color_hover;
+            }
+            &.selected {
+                background-color: $taggit_labels_selected_tag_bg;
+                color: $taggit_labels_selected_tag_color;
+                border-color: $taggit_labels_selected_tag_border_color;
+                &:hover {
+                    background-color: $taggit_labels_selected_tag_bg_hover;
+                    color: $taggit_labels_selected_tag_color_hover;
+                    border-color: $taggit_labels_selected_tag_border_color_hover;
+                }
+            }
+        }
+    }
+}
