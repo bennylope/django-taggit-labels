@@ -3,6 +3,12 @@
 History
 -------
 
+0.5.0 (2017-02-01)
+++++++++++++++++++
+
+* Improved label styling
+* Javascript updates for usage outside the admin
+
 0.4.1 (2016-01-13)
 ++++++++++++++++++
 

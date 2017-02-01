@@ -14,3 +14,5 @@ Contributors
 * `zeograd <https://github.com/zeograd/>`_
 * `Sander van Leeuwen <https://github.com/svleeuwen>`_
 * `Florian Demmer <https://github.com/fdemmer>`_
+* `Robert Moggach <https://github.com/robmoggach>`_
+* `Alex Adkins <https://github.com/alexadkins>`_
