@@ -16,3 +16,4 @@ Contributors
 * `Florian Demmer <https://github.com/fdemmer>`_
 * `Robert Moggach <https://github.com/robmoggach>`_
 * `Alex Adkins <https://github.com/alexadkins>`_
+* `Miha Frangez <https://github.com/franga2000>`_
