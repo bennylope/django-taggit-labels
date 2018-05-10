@@ -33,18 +33,24 @@ them in Django's admin interface. It presumes that you are using a managed (or
 Quickstart
 ----------
 
-Install django-taggit-labels::
+Install django-taggit-labels:
+
+.. code-block:: bash
 
     pip install django-taggit-labels
 
-Add `taggit_labels` to your project::
+Add `taggit_labels` to your project:
+
+.. code-block:: python
 
     INSTALLED_APPS = (
         'taggit',
         'taggit_labels',
     )
 
-Use the label widget::
+Use the label widget:
+
+.. code-block:: python
 
     from taggit_labels.widgets import LabelWidget
 
@@ -56,7 +62,9 @@ Just use this form class for your `ModelAdmin
 class now.
 
 You can use the widget with `your own tag model
-<http://django-taggit.readthedocs.org/en/latest/custom_tagging.html>`_, too::
+<http://django-taggit.readthedocs.org/en/latest/custom_tagging.html>`_, too:
+
+.. code-block:: python
 
     from taggit_labels.widgets import LabelWidget
 
