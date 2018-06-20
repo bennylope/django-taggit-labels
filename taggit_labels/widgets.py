@@ -90,3 +90,5 @@ class LabelWidget(forms.TextInput):
         css = {
             'all': ('taggit_labels/css/taggit_labels.css',)
         }
+
+        return forms.Media(js=js, css=css)
