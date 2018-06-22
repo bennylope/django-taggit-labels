@@ -1,4 +1,5 @@
 from django import forms
+from django.conf import settings
 try:
     # Django 1.9
     from django.forms.utils import flatatt
@@ -76,8 +77,18 @@ class LabelWidget(forms.TextInput):
         tag_ul = u"<ul{0}>{1}</ul>".format(list_attrs, tag_li)
         return mark_safe(u"{0}{1}".format(tag_ul, input_field))
 
-    class Media:
+    @property
+    def media(self):
+        extra = '' if settings.DEBUG else '.min'
+        admin_prefix = 'admin/js'
+        js = [
+            '%s/vendor/jquery/jquery%s.js' % (admin_prefix, extra),
+            '%s/jquery.init.js' % admin_prefix,
+            '%s/core.js' % admin_prefix,
+            'taggit_labels/js/taggit_labels.js'
+        ]
         css = {
             'all': ('taggit_labels/css/taggit_labels.css',)
         }
-        js = ('taggit_labels/js/taggit_labels.js',)
+
+        return forms.Media(js=js, css=css)
