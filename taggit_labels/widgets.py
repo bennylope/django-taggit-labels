@@ -46,7 +46,7 @@ class LabelWidget(forms.TextInput):
             value = edit_string_for_tags([o.tag for o in value.select_related("tag")])
         return value
 
-    def render(self, name, value, attrs={}):
+    def render(self, name, value, attrs={}, **kwargs):
         # Case in which a new form is dispalyed
         if value is None:
             current_tags = []
@@ -66,8 +66,8 @@ class LabelWidget(forms.TextInput):
             formatted_value = self.format_value(value)
             selected_tags = self.tag_list([t.name for t in current_tags])
 
-        input_field = super(LabelWidget, self).render(name, formatted_value, attrs)
-
+        input_field = super(LabelWidget, self).render(name, formatted_value,
+                                                      attrs, **kwargs)
         if attrs.get('class') is None:
             attrs.update({'class': 'taggit-labels taggit-list'})
         list_attrs = flatatt(attrs)
