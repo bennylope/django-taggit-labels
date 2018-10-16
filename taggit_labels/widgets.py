@@ -46,7 +46,7 @@ class LabelWidget(forms.TextInput):
             value = edit_string_for_tags([o.tag for o in value.select_related("tag")])
         return value
 
-    def render(self, name, value, attrs={}, **kwargs):
+    def render(self, name, value, attrs={}, renderer=None, **kwargs):
         # Case in which a new form is dispalyed
         if value is None:
             current_tags = []
