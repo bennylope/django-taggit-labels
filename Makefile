@@ -5,9 +5,6 @@ MODULE_NAME=taggit_labels
 TEST_FLAGS=--verbose
 COVER_FLAGS=--cov=taggit_labels
 
-help:
-	@perl -nle'print $& if m{^[a-zA-Z_-]+:.*?## .*$$}' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
-
 install:  ## Install all requirements including for testing
 	pip install -r requirements-dev.txt
 
@@ -66,3 +63,7 @@ docs:
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 	open docs/_build/html/index.html
+
+help:
+	@perl -nle'print $& if m{^[a-zA-Z_-]+:.*?## .*$$}' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+
