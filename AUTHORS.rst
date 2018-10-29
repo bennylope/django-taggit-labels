@@ -17,3 +17,6 @@ Contributors
 * `Robert Moggach <https://github.com/robmoggach>`_
 * `Alex Adkins <https://github.com/alexadkins>`_
 * `Miha Frangez <https://github.com/franga2000>`_
+* `Dmytro Yurchenko <https://github.com/diurchenko>`_
+* `Thomas Krapp <https://github.com/tkrapp>`_
+* `Basil Shubin <https://github.com/bashu>`_
