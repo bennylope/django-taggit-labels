@@ -69,6 +69,6 @@ You can use the widget with `your own tag model
     from taggit_labels.widgets import LabelWidget
 
     class ContentForm(forms.Form):
-        tags = TagField(required=False, LabelWidget(model=MyTag))
+        tags = TagField(required=False, widget=LabelWidget(model=MyTag))
 
 The `tag` model from taggit will be presumed if you do not specify a tag model.
