@@ -46,7 +46,7 @@ class LabelWidget(forms.TextInput):
 
     def format_value(self, value):
         if value is not None and not isinstance(value, six.string_types):
-            value = edit_string_for_tags([o.tag for o in value.select_related("tag")])
+            value = edit_string_for_tags([tag for tag in value])
         return value
 
     def render(self, name, value, attrs={}, **kwargs):
@@ -65,7 +65,7 @@ class LabelWidget(forms.TextInput):
 
         # Case in which value is loaded from saved tags
         else:
-            current_tags = [o.tag for o in value.select_related("tag")]
+            current_tags = [tag for tag in value]
             formatted_value = self.format_value(value)
             selected_tags = self.tag_list([t.name for t in current_tags])
 
