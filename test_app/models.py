@@ -9,7 +9,9 @@ class MyCustomTag(TagBase):
 
 
 class TaggedWhatever(GenericTaggedItemBase):
-    tag = models.ForeignKey(MyCustomTag, related_name="labels_whatever_items")
+    tag = models.ForeignKey(
+        MyCustomTag, related_name="labels_whatever_items", on_delete=models.CASCADE
+    )
 
 
 class Content(models.Model):
