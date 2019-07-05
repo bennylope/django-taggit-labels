@@ -1,12 +1,7 @@
 from django import forms
 from django.conf import settings
 
-try:
-    # Django 1.9
-    from django.forms.utils import flatatt
-except ImportError:
-    # Django <1.9
-    from django.forms.util import flatatt
+from django.forms.utils import flatatt
 from django.utils.safestring import mark_safe
 from django.utils import six
 
