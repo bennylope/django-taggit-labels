@@ -16,7 +16,7 @@ class LabelTest(TestCase):
         Tag.objects.create(name="Advanced Computering", slug="advanced-computering")
         MyCustomTag.objects.create(name="Coffee", slug="coffee")
         MyCustomTag.objects.create(name="tea", slug="tea")
-        MyCustomTag.objects.create(name="À bientôt", slug="a-bientot")
+        MyCustomTag.objects.create(name=u"À bientôt", slug="a-bientot")
         self.article = Content.objects.create(title="My test")
         self.article.tags.add("Python")
         self.post = MyContent.objects.create(title="My test")
@@ -45,7 +45,7 @@ class LabelTest(TestCase):
         self.assertEqual(
             ["Coffee"], [tag[0] for tag in return_list if tag[1] == "selected taggit-tag"]
         )
-        self.assertEqual(["tea", "À bientôt"], [tag[0] for tag in return_list if tag[1] == "taggit-tag"])
+        self.assertEqual(["tea", u"À bientôt"], [tag[0] for tag in return_list if tag[1] == "taggit-tag"])
 
     def test_render_new(self):
         """Render method shouldn't error out with missing or string tags"""
