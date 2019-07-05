@@ -9,7 +9,7 @@ class MyCustomTag(TagBase):
 
 
 class TaggedWhatever(GenericTaggedItemBase):
-    tag = models.ForeignKey(MyCustomTag)
+    tag = models.ForeignKey(MyCustomTag, related_name="labels_whatever_items")
 
 
 class Content(models.Model):

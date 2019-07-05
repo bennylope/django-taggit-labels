@@ -32,20 +32,20 @@ class LabelTest(TestCase):
         widget = LabelWidget()
         return_list = widget.tag_list([t.name for t in self.article.tags.all()])
         self.assertEqual(
-            ["Python"], [tag[0] for tag in return_list if tag[1] == "selected"]
+            ["Python"], [tag[0] for tag in return_list if tag[1] == "selected taggit-tag"]
         )
         self.assertEqual(
             ["Django", "Advanced Computering"],
-            [tag[0] for tag in return_list if tag[1] == ""],
+            [tag[0] for tag in return_list if tag[1] == "taggit-tag"],
         )
 
     def test_custom_selected_tags(self):
         widget = LabelWidget(model=MyCustomTag)
         return_list = widget.tag_list([t.name for t in self.post.tags.all()])
         self.assertEqual(
-            ["Coffee"], [tag[0] for tag in return_list if tag[1] == "selected"]
+            ["Coffee"], [tag[0] for tag in return_list if tag[1] == "selected taggit-tag"]
         )
-        self.assertEqual(["tea"], [tag[0] for tag in return_list if tag[1] == ""])
+        self.assertEqual(["tea", "À bientôt"], [tag[0] for tag in return_list if tag[1] == "taggit-tag"])
 
     def test_render_new(self):
         """Render method shouldn't error out with missing or string tags"""
