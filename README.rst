@@ -52,6 +52,7 @@ Use the label widget:
 
 .. code-block:: python
 
+    from taggit.forms import TagField
     from taggit_labels.widgets import LabelWidget
 
     class ContentForm(forms.ModelForm):
@@ -59,13 +60,19 @@ Use the label widget:
 
 Just use this form class for your `ModelAdmin
 <https://docs.djangoproject.com/en/dev/ref/contrib/admin/#django.contrib.admin.ModelAdmin.form>`_
-class now.
+class now:
+
+.. code-block:: python
+
+    class ContentAdmin(admin.ModelAdmin):
+        form = ContentAdminForm
 
 You can use the widget with `your own tag model
 <http://django-taggit.readthedocs.org/en/latest/custom_tagging.html>`_, too:
 
 .. code-block:: python
 
+    from taggit.forms import TagField
     from taggit_labels.widgets import LabelWidget
 
     class ContentForm(forms.Form):
