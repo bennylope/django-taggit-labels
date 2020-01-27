@@ -3,7 +3,10 @@ from django.conf import settings
 
 from django.forms.utils import flatatt
 from django.utils.safestring import mark_safe
-from django.utils import six
+try:
+    from django.utils import six
+except ImportError:
+    import six
 
 from taggit.models import Tag
 from taggit.utils import edit_string_for_tags
