@@ -5,9 +5,6 @@ django-taggit-labels
 .. image:: https://badge.fury.io/py/django-taggit-labels.svg
     :target: https://badge.fury.io/py/django-taggit-labels
 
-.. image:: https://travis-ci.org/bennylope/django-taggit-labels.svg?branch=master
-    :target: https://travis-ci.org/bennylope/django-taggit-labels
-
 Label widget(s) for `django-taggit <https://github.com/alex/django-taggit>`_.
 
 Now instead of this:
