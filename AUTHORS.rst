@@ -5,7 +5,7 @@ Credits
 Development Lead
 ----------------
 
-* Ben Lopatin <ben@wellfire.co>
+* Ben Lopatin <ben@benlopatin.com>
 
 Contributors
 ------------
@@ -20,3 +20,4 @@ Contributors
 * `Dmytro Yurchenko <https://github.com/diurchenko>`_
 * `Thomas Krapp <https://github.com/tkrapp>`_
 * `Basil Shubin <https://github.com/bashu>`_
+* `Andre Pereira <https://github.com/andrebr>`_

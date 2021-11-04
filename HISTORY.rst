@@ -3,6 +3,17 @@
 History
 -------
 
+0.7.1 (2021-11-04)
+++++++++++++++++++
+
+* Removed deprecated code
+* Dropped support for Django 1.11, Python < 3.6
+
+0.7.0 (2020-03-09)
+++++++++++++++++++
+
+* Updated Django compat and bug fixes
+
 0.6.0 (2018-10-29)
 ++++++++++++++++++
 
