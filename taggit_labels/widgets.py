@@ -1,5 +1,6 @@
 from django import forms
 from django.conf import settings
+from html import escape
 
 try:
     # Django 1.9
@@ -40,7 +41,7 @@ class LabelWidget(forms.TextInput):
         with tag lists built from forms not fully submitted.
         """
         return [
-            (tag.name, "selected taggit-tag" if tag.name in tags else "taggit-tag")
+            (escape(tag.name), "selected taggit-tag" if escape(tag.name) in tags else "taggit-tag")
             for tag in self.model.objects.all()
         ]
 
