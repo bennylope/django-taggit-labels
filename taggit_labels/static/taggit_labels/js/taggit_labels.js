@@ -10,13 +10,11 @@
             var tagItems = $(this).find(".taggit-list .taggit-tag");
             var tagList = inputs.value.split(", ");
             tagItems.click(function() {
-                var tagList = inputs.value.split(", ");
-                var tagName = $(this).attr("data-tag-name");
-
-                // Tag names need to be quotes if they contain commas or quotation marks
-                if(tagName.indexOf(",") != -1 || tagName.indexOf(" ") != -1) {
-                    tagName = "\"" + tagName + "\"";
-                }
+                // split input value in array by ", " but ignore a comma between double quotes
+                var tagList = inputs.value.match(/(?:[^, "]+|"[^"]*")+/g);
+                if (!tagList) tagList = [];
+                // Always wrap tag name with double quote
+                var tagName = "\"" + $(this).attr("data-tag-name") + "\"";
 
                 var index = $.inArray(tagName, tagList);
                 // Add the selected tag to the list of tags if it wasn't there previously
