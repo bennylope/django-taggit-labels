@@ -1,14 +1,14 @@
 from django import forms
 from django.conf import settings
 
-try:
-    # Django 1.9
-    from django.forms.utils import flatatt
-except ImportError:
-    # Django <1.9
-    from django.forms.util import flatatt
+from django.forms.utils import flatatt
 from django.utils.safestring import mark_safe
-from django.utils import six
+from html import escape
+
+try:
+    from django.utils import six
+except ImportError:
+    import six
 
 from taggit.models import Tag
 from taggit.utils import edit_string_for_tags
@@ -40,7 +40,7 @@ class LabelWidget(forms.TextInput):
         with tag lists built from forms not fully submitted.
         """
         return [
-            (tag.name, "selected taggit-tag" if tag.name in tags else "taggit-tag")
+            (escape(tag.name), "selected taggit-tag" if tag.name in tags else "taggit-tag")
             for tag in self.model.objects.all()
         ]
 
@@ -78,7 +78,7 @@ class LabelWidget(forms.TextInput):
 
         tag_li = "".join(
             [
-                u"<li data-tag-name='{0}' class='{1}'>{0}</li>".format(tag[0], tag[1])
+                f"<li data-tag-name='{tag[0]}' class='{tag[1]}'>{tag[0]}</li>"
                 for tag in selected_tags
             ]
         )
